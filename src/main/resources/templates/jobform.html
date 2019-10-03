@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>New Job Form</title>
+    <div th:insert="base :: head"></div>
+</head>
+<body>
+<div th:insert="base :: navlinks"></div>
+<div class="container">
+    <div class="jumbotron">
+        <h1>New Job Form</h1>
+        <form action="#" th:action="@{/processjob}" th:object="${job}" method="post">
+            <input type="hidden" th:field="*{id}" />
+            <input type="hidden" th:field="*{postedDate}" />
+            Title:       <input type="text" th:field="*{title}" />
+            <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+            <br>
+            Description: <textarea rows="4" th:field="*{description}" />
+            <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+            <br>
+            Author:      <input type="text" th:field="*{author}" />
+            <span th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></span>
+            <br>
+            Phone:       <input type="number" minlength="3" maxlength="3" th:field="*{phoneAreaCode}" />
+            <span th:if="${#fields.hasErrors('phoneAreaCode')}" th:errors="*{phoneAreaCode}"></span>-
+            <input type="number" minlength="3" maxlength="3" th:field="*{phonePart1}" />
+            <span th:if="${#fields.hasErrors('phonePart1')}" th:errors="*{phonePart1}"></span>-
+            <input type="number" minlength="4" maxlength="4" th:field="*{phonePart2}" />
+            <span th:if="${#fields.hasErrors('phonePart2')}" th:errors="*{phonePart2}"></span>
+            <br>
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+</div>
+<div th:insert="base :: footer"></div>
+<div th:insert="base :: bootstrapScripts"></div>
+</body>
+</html>

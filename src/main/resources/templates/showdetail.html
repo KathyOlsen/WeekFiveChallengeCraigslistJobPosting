@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Job Detail</title>
+    <div th:insert="base :: head"></div>
+</head>
+<body>
+<div th:insert="base :: navlinks"></div>
+<div class="container">
+    <div class="jumbotron">
+
+        Date:            <span th:text="${job.postedDate}"></span><br>
+        Job Title:       <span th:text="${job.title}"></span><br>
+        Job Description: <span th:text="${job.description}"></span><br>
+        Author of Post:  <span th:text="${job.author}"></span><br>
+        Contact Phone:   <span th:text="${job.phone}"></span>
+    </div>
+</div>
+<div th:insert="base :: footer"></div>
+<div th:insert="base :: bootstrapScripts"></div>
+</body>
+</html>
