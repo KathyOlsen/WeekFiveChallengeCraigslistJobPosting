@@ -16,7 +16,7 @@ public class HomeController {
 
     @RequestMapping("/")
     public String listJobs(Model model){
-        model.addAttribute("job", jobRepository.findAll());
+        model.addAttribute("jobs", jobRepository.findAll());
         return "listAll";
     }
 
