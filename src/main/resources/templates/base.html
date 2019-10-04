@@ -15,35 +15,20 @@
 <body>
 <div th:fragment="navlinks" style="background-color: blue">
     <nav class="nav">
-        <span style="color: whitesmoke"><b>SuperJobs&nbsp;&nbsp;&nbsp;</b></span>
+        <span style="color: yellow" font-size="35"><b>SuperJobs&nbsp;&nbsp;&nbsp;</b></span>
         <a class="nav-link"  style="color: whitesmoke" href="/">List All Jobs</a>
         <a class="nav-link"  style="color: whitesmoke" href="/add">Add a Job</a>
         <form th:action="@{/processsearch}" method="post">
             <select name="SearchSelector">
                 <option value="NONE">Search by...</option>
-                <option value="Date">Date Posted</option>
                 <option value="Title"> Job Title</option>
                 <option value="Description">Job Description</option>
                 <option value="Author">Author of Post</option>
-                <option value="Phone">Contact Phone Number</option>
             </select>
-            <input type="date"
-                   name="searchD">
             <input type="text"
                    placeholder="Search term.."
                    name="search">
-            <input type="number" minlength="3" maxlength="3"
-                   placeholder="Area Code"
-                   name="searchPAC">
-            <span style="color: whitesmoke">-</span>
-            <input type="number" minlength="3" maxlength="3"
-                   placeholder="###"
-                   name="searchP1">
-            <span style="color: whitesmoke">-</span>
-            <input type="number" minlength="4" maxlength="4"
-                   placeholder="####"
-                   name="searchP2">
-            <button type="submit">Submit Search</button>
+            <button type="submit" style="background-color: yellow; color: blue"><b>Submit Search</b></button>
         </form>
     </nav>
 </div>
@@ -60,7 +45,7 @@
      text-align: center;
      background-color: blue;
      color: whitesmoke"
-     font-family="'Scheherazade', serif;">
-    &#0169; Copyright Katherine K. Olsen 2019. All rights reserved.
+     font-family="'Scheherazade', serif;" font-size 27px>
+    &#0169; Copyright 2019 Katherine K. Olsen. All rights reserved.
 </div>
 </html>

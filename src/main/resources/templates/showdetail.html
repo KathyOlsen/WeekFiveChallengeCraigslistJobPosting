@@ -6,14 +6,52 @@
 </head>
 <body>
 <div th:insert="base :: navlinks"></div>
+<br>
 <div class="container">
     <div class="jumbotron">
-
-        Date:            <span th:text="${job.postedDate}"></span><br>
-        Job Title:       <span th:text="${job.title}"></span><br>
-        Job Description: <span th:text="${job.description}"></span><br>
-        Author of Post:  <span th:text="${job.author}"></span><br>
-        Contact Phone:   <span th:text="${job.phone}"></span>
+        <h1 style="color: blue;">Job Detail</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <p>Date:</p>
+                </div>
+                <div class="col-sm-8">
+                    <span th:text="${#dates.format(job.postedDate, 'dd-MMM-yyyy')}"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <p>Job Title:</p>
+                </div>
+                <div class="col-sm-8">
+                    <span th:text="${job.title}"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <p>Job Description:</p>
+                </div>
+                <div class="col-sm-8">
+                    <span th:text="${job.description}"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <p>Author of Post:</p>
+                </div>
+                <div class="col-sm-8">
+                    <span th:text="${job.author}"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <p>Contact Phone:</p>
+                </div>
+                <div class="col-sm-8">
+                    <span th:text="${job.phone}"></span>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <div th:insert="base :: footer"></div>

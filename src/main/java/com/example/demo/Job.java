@@ -20,49 +20,34 @@ public class Job {
     private Date postedDate;
 
     @NotNull
-    @Size(min=4, max=20)
+    @Size(min=4, max=30)
     private String title;
 
     @NotNull
-    @Size(min=5,max=50)
+    @Size(min=5,max=100)
     private String description;
 
     @NotNull
-    @Size(min=3, max=15)
+    @Size(min=3, max=20)
     private String author;
 
     @NotNull
-    @Size(min=3,max=3)
-    private int phoneAreaCode;
-
-    @NotNull
-    @Size(min=3,max=3)
-    private int phonePart1;
-
-    @NotNull
-    @Size(min=4,max=4)
-    private int phonePart2;
-
+    @Size(min=10,max=14)
     private String phone;
 
     public Job() {
     }
 
     public Job(Date postedDate,
-               @NotNull @Size(min = 4, max = 20) String title,
-               @NotNull @Size(min = 5, max = 50) String description,
-               @NotNull @Size(min = 3, max = 15) String author,
-               @NotNull @Size(min = 3, max = 3) int phoneAreaCode,
-               @NotNull @Size(min = 3, max = 3) int phonePart1,
-               @NotNull @Size(min = 4, max = 4) int phonePart2) {
+               @NotNull @Size(min = 4, max = 30) String title,
+               @NotNull @Size(min = 5, max = 100) String description,
+               @NotNull @Size(min = 3, max = 20) String author,
+               @NotNull @Size(min = 10, max = 14) String phone) {
         this.postedDate = postedDate;
         this.title = title;
         this.description = description;
         this.author = author;
-        this.phoneAreaCode = phoneAreaCode;
-        this.phonePart1 = phonePart1;
-        this.phonePart2 = phonePart2;
-        this.phone = phoneAreaCode + "-" + phonePart1 + "-" + phonePart2;
+        this.phone = phone;
     }
 
     public long getId() {
@@ -103,30 +88,6 @@ public class Job {
 
     public void setAuthor(String author) {
         this.author = author;
-    }
-
-    public int getPhoneAreaCode() {
-        return phoneAreaCode;
-    }
-
-    public void setPhoneAreaCode(int phoneAreaCode) {
-        this.phoneAreaCode = phoneAreaCode;
-    }
-
-    public int getPhonePart1() {
-        return phonePart1;
-    }
-
-    public void setPhonePart1(int phonePart1) {
-        this.phonePart1 = phonePart1;
-    }
-
-    public int getPhonePart2() {
-        return phonePart2;
-    }
-
-    public void setPhonePart2(int phonePart2) {
-        this.phonePart2 = phonePart2;
     }
 
     public String getPhone() {

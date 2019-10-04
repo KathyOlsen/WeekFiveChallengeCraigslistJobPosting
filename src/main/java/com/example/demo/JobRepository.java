@@ -7,9 +7,7 @@ import java.util.Date;
 
 public interface JobRepository extends CrudRepository<Job, Long> {
 
-    ArrayList<Job> findByDate(Date postedDate);
     ArrayList<Job> findByTitleContainingIgnoreCase(String title);
     ArrayList<Job> findByDescriptionContainingIgnoreCase(String description);
     ArrayList<Job> findByAuthorContainingIgnoreCase(String author);
-    ArrayList<Job> findByPhone(String phone);
 }

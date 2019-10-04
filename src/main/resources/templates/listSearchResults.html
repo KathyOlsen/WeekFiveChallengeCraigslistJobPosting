@@ -6,16 +6,17 @@
 </head>
 <body>
 <div th:insert="base :: navlinks"></div>
+<br>
 <div class="container">
     <div class="jumbotron">
-        <h2>Search Results</h2>
+        <h1 style="color: blue">Search Results</h1>
         <table>
             <tr>
-                <th>Date Posted &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                <th>Job Title &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                <th>Job Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                <th>Author of Post &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                <th>Contact Phone Number </th>
+                <th>Date Posted &nbsp;&nbsp;</th>
+                <th>Job Title &nbsp;&nbsp;</th>
+                <th>Job Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <th>Author of Post &nbsp;&nbsp;</th>
+                <th>Contact Phone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                 <th>Actions</th>
             </tr>
             <tr th:each="job : ${jobs}">

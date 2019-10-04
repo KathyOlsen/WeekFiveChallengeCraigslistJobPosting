@@ -7,8 +7,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Controller
@@ -43,30 +41,13 @@ public class HomeController {
     @PostMapping("/processsearch")
     public String processSearch(Model model,
                                 @RequestParam(name="SearchSelector") String option,
-                                @RequestParam(name="search") String search,
-                                @RequestParam(name="searchD") String searchD,
-                                @RequestParam(name="searchPAC")int searchPAC,
-                                @RequestParam(name="searchP1")int searchP1,
-                                @RequestParam(name="searchP2")int searchP2) {
-        if (option.equals("Date")) {
-            String pattern = "yyyy-MM-dd";
-            try {
-                String formattedDate = searchD;
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-                Date realDate = simpleDateFormat.parse(formattedDate);
-                model.addAttribute("jobs", jobRepository.findByDate(realDate));
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-        }else if(option.equalsIgnoreCase("Title")){
+                                @RequestParam(name="search") String search){
+        if(option.equals("Title")){
             model.addAttribute("jobs", jobRepository.findByTitleContainingIgnoreCase(search));
-        }else if(option.equalsIgnoreCase("Description")){
+        }else if(option.equals("Description")){
             model.addAttribute("jobs", jobRepository.findByDescriptionContainingIgnoreCase(search));
-        }else if(option.equalsIgnoreCase("Author")){
+        }else if(option.equals("Author")){
             model.addAttribute("jobs", jobRepository.findByAuthorContainingIgnoreCase(search));
-        }else if(option.equalsIgnoreCase("Phone")){
-            String phone = searchPAC + "-" + searchP1 + "-" + searchP2;
-            model.addAttribute("jobs", jobRepository.findByPhone(phone));
         }
         return "listSearchResults";
     }

@@ -1,12 +1,13 @@
 body{
-    background-image: url(https://res.cloudinary.com/dhg2lpfid/image/upload/v1570043001/pexels-photo-216597whiteclouds_otaiut.jpg);
+    background-image: url(https://res.cloudinary.com/dhg2lpfid/image/upload/v1570167265/Attachment-1_1_vgra0i.jpg);
     background-size: cover;
     font-family: 'Scheherazade', serif;
-    font-size: 48px;
+    font-size: 27px;
 }
 
 h1{
     text-align: center;
+
 }
 
 h2{
@@ -24,9 +25,10 @@ a{
 .jumbotron{
     background-color: lightskyblue;
     padding-top: 15px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
     padding-bottom: 15px;
+
 }
 
 .card{
